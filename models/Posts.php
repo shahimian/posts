@@ -11,7 +11,6 @@ use Yii;
  * @property string $user_id
  * @property string $title
  * @property string $content
- * @property boolean $is_live_page
  * @property string $created_at
  * @property string $updated_at
  */
@@ -32,7 +31,7 @@ class Posts extends \yii\db\ActiveRecord
     {
         return [
             [['user_id', 'title', 'content', 'created_at', 'updated_at'], 'required'],
-            [['user_id','is_live_page'], 'integer'],
+            [['user_id'], 'integer'],
             [['title', 'content'], 'string'],
             [['created_at', 'updated_at'], 'safe'],
         ];
@@ -48,7 +47,6 @@ class Posts extends \yii\db\ActiveRecord
             'user_id' => 'شناسه کاریری',
             'title' => 'عنوان',
             'content' => 'محتوا',
-            'is_live_page' => 'فقط در صفحه پخش زنده نمایش داده شود',
             'created_at' => 'تاریخ نشر',
             'updated_at' => 'تاریخ بروز رسانی',
         ];

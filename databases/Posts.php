@@ -22,7 +22,6 @@ class Posts extends Migration
                 'user_id' => $this->bigInteger(),
                 'title' => $this->text(),
                 'content' => $this->text(),
-                'is_live_page' => $this->boolean(),
                 'created_at' => $this->dateTime(),
                 'updated_at' => $this->dateTime(),
             ], 'ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci');
