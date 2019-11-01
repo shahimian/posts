@@ -8,12 +8,8 @@ class PostsAsset extends AssetBundle {
 
     public $sourcePath = '@vendor/shahimian/yii2-posts/assets';
 
-    public $css = [
-        'quill/quill.snow.css',
-    ];
-
-    public $js = [
-        'quill/quill.js',
+    public $depends = [
+        'shahimian\assets\fonts\Assets'
     ];
 
 }
