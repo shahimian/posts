@@ -1,6 +1,9 @@
 <?php
 
 use yii\helpers\Html;
+use shahimian\posts\PostsAsset;
+
+PostsAsset::register($this);
 
 /* @var $this yii\web\View */
 /* @var $model shahimian\posts\models\Posts */

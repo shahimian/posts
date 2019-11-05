@@ -10,6 +10,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use shahimian\dategj\DateGJ;
 use shahimian\posts\databases\Posts as DbPosts;
+use yii\data\ActiveDataProvider;
 
 /**
  * DefaultController implements the CRUD actions for Posts model.
@@ -52,11 +53,14 @@ class DefaultController extends Controller
     public function actionIndex()
     {
         (new DbPosts)->up();
-        $searchModel = new PostsSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = new ActiveDataProvider([
+            'query' => Posts::find(),
+            'pagination' => [
+                'pageSize' => 10,
+            ],
+        ]);
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }

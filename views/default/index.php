@@ -1,7 +1,11 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+use yii\widgets\ListView;
+use shahimian\posts\PostsAsset;
+
+PostsAsset::register($this);
+
 
 /* @var $this yii\web\View */
 /* @var $searchModel shahimian\posts\models\PostsSearch */
@@ -17,18 +21,20 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('ایجاد محتوا', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
-            'title:ntext',
-            'created_at',
-            'updated_at',
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+    <table class="acc-table">
+        <thead>
+            <tr>
+                <td>ردیف</td>
+                <td>عنوان</td>
+                <td>تاریخ ایجاد</td>
+                <td>تاریخ بروز رسانی</td>
+            </tr>
+        </thead>
+        <tbody>
+            <?= ListView::widget([
+                'dataProvider' => $dataProvider,
+                'itemView' => '_posts',
+            ]) ?>
+        </tbody>
+    </table>
 </div>
