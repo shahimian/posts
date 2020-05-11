@@ -16,7 +16,8 @@
         "shahimian/yii2-xeditor": "0.0.1",
         "shahimian/yii2-dategj": "^1.0.0",
         "shahimian/yii2-persian-fonts": "^1.0.0",
-        "shahimian/yii2-assets-table": "0.0.1"
+        "shahimian/yii2-assets-table": "0.0.1",
+        "shahimian/yii2-colors": "0.0.1"
     },
     "autoload": {
         "psr-4": {
